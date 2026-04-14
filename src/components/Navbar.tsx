@@ -4,6 +4,8 @@ import HoverLinks from "./HoverLinks";
 import { gsap } from "gsap";
 import { ScrollSmoother } from "gsap-trial/ScrollSmoother";
 import "./styles/Navbar.css";
+import AnimatedLogo from "./AnimatedLogo";
+import ThemeToggle from "./ThemeToggle";
 
 gsap.registerPlugin(ScrollSmoother, ScrollTrigger);
 export let smoother: ScrollSmoother;
@@ -42,31 +44,34 @@ const Navbar = () => {
   return (
     <>
       <div className="header">
-        <a href="/#" className="navbar-title" data-cursor="disable">
-          Logo
+        <a href="/#" className="navbar-title" data-cursor="disable" title="Home" >
+          <AnimatedLogo />
         </a>
         <a
-          href="mailto:example@mail.com"
+          href="mailto:krishnasrikarayyagari@gmail.com"
           className="navbar-connect"
           data-cursor="disable"
         >
-          example@mail.com
+          krishnasrikarayyagari@gmail.com
         </a>
         <ul>
           <li>
-            <a data-href="#about" href="#about">
+            <a data-href="#about" href="#about" title="About">
               <HoverLinks text="ABOUT" />
             </a>
           </li>
           <li>
-            <a data-href="#work" href="#work">
+            <a data-href="#work" href="#work" title="Work">
               <HoverLinks text="WORK" />
             </a>
           </li>
           <li>
-            <a data-href="#contact" href="#contact">
+            <a data-href="#contact" href="#contact" title="Contact">
               <HoverLinks text="CONTACT" />
             </a>
+          </li>
+          <li>
+            <ThemeToggle />
           </li>
         </ul>
       </div>

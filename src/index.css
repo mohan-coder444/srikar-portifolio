@@ -15,9 +15,9 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
+  user-select: none;
   --accentColor: #c2a4ff;
   --backgroundColor: #0b080c;
   --vh: 100vh;
@@ -120,4 +120,49 @@ body {
   .techstack h2 {
     font-size: 40px;
   }
+}
+
+/* --- THEME TOGGLE RULES --- */
+html[data-theme="light"] {
+  --backgroundColor: #fafafa;
+  --accentColor: #7e22ce;
+  color: #111827;
+}
+
+html[data-theme="light"] body {
+  background-color: var(--backgroundColor) !important;
+  color: #111827 !important;
+}
+
+html[data-theme="light"] .header ul li {
+  color: #374151;
+}
+
+html[data-theme="light"] .navbar-connect {
+  color: #374151;
+}
+
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] h5,
+html[data-theme="light"] h6,
+html[data-theme="light"] p {
+  color: #111827;
+}
+
+html[data-theme="light"] .project-card {
+  background-color: #ffffff !important;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+html[data-theme="light"] .contact-box {
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+}
+
+/* Base Transitions for smooth theme switching */
+body, main, .header, .header ul li, .navbar-connect, p, h1, h2, h3, h4, h5, h6 {
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }

@@ -1,3 +1,4 @@
+// @ts-ignore
 import { SplitText } from "gsap-trial/SplitText";
 import gsap from "gsap";
 import { smoother } from "../Navbar";
@@ -7,7 +8,7 @@ export function initialFX() {
   smoother.paused(false);
   document.getElementsByTagName("main")[0].classList.add("main-active");
   gsap.to("body", {
-    backgroundColor: "#0b080c",
+    backgroundColor: "var(--backgroundColor)",
     duration: 0.5,
     delay: 1,
   });
@@ -69,6 +70,19 @@ export function initialFX() {
       duration: 1.2,
       ease: "power1.inOut",
       delay: 0.1,
+    }
+  );
+
+  gsap.fromTo(
+    ".navbar-logo-img",
+    { scale: 0.5, opacity: 0, rotate: -45 },
+    {
+      scale: 1,
+      opacity: 1,
+      rotate: 0,
+      duration: 2,
+      ease: "elastic.out(1.2, 0.5)",
+      delay: 0.6,
     }
   );
 
